@@ -156,14 +156,14 @@ class ArxivPaper:
                 conclusion = match.group(0)
         llm = get_llm()
         #prompt = """Given the title, abstract, introduction and the conclusion (if any) of a paper in latex format, generate a one-sentence TLDR summary in __LANG__:
-        prompt = """Given the title, abstract, introduction, and conclusion (if any) of a paper in LaTeX format, generate a comprehensive summary in __LANG__. The summary should include the following components:
+        prompt = """Given the title, abstract, introduction, and conclusion (if any) of a paper in LaTeX format, generate a concise three-sentence summary in __LANG__. Each sentence should address one of the following points:
 
-        1. **Problem Statement**: Clearly describe the problem or research question the paper addresses.
-        2. **Technical Approach**: Detail the methods, techniques, or frameworks used to address the problem.
-        3. **Results and Impact**: Summarize the key findings or outcomes of the research. Discuss the significance or impact of these results in the context of the field.
+        1. Problem Statement: State the problem or research question the paper addresses.
+        2. Technical Approach: Describe the key methods or techniques used to solve the problem.
+        3. Results and Impact: Highlight the main findings or outcomes and their significance.
         
-        The summary should be well-structured and provide a thorough understanding of the paper's contributions without being overly verbose.
-
+        Keep the summary focused and avoid unnecessary details.
+        
         \\title{__TITLE__}
         \\begin{abstract}__ABSTRACT__\\end{abstract}
         __INTRODUCTION__
